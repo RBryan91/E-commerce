@@ -1,0 +1,13 @@
+.carousel.carousel-slider{
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    height: 680px;
+}
+.carousel{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #061F37;  
+}

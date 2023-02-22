@@ -1,0 +1,167 @@
+nav{
+    height: 100px;
+    width: 100%;
+    background-color: #061F37; 
+
+}
+
+.liste{
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+.liste li a:hover{
+  text-decoration: underline;
+}
+
+#panier a:hover{
+  text-decoration: none !important;
+}
+
+.items{
+    color: #AA974C;
+    cursor: pointer;
+    font-size: 25px;
+
+}
+.btn{
+    display: none;
+    
+}
+.divlogo1{
+    padding-top: 30px;
+}
+.logo1{
+    width: auto;
+    height: 130px;
+    cursor: pointer;
+}
+.logo2{
+    height: 30px;
+    filter: contrast(0);
+    cursor: pointer;
+    margin-left: 12px;
+}
+.logoIcons{
+
+    min-width: 15%;
+    max-width: 35%;
+    margin-left: 20px;
+    
+}
+.logoIcons > li{
+    padding-left: 25px;
+    display: inline-block;
+}
+#collection_btn:hover{
+    text-decoration: underline;
+}
+.items:hover{
+    text-decoration: underline;
+
+}
+#collection_btn:hover .collection{
+   display: block;
+}
+.Vetement_ul li:hover{
+    text-decoration: underline;
+}
+.Accesoire_ul li:hover{
+    text-decoration: underline;
+}
+
+
+
+/* div collection */
+.collection {
+    background-color:#061F37;
+    z-index: 10;
+    height: 35%;
+    width: 25%;
+    left: 55%;
+    position: absolute;
+    display: none;
+    padding: 1%;
+    cursor: default;
+  }
+
+.collection h1{
+  color: #AA974C;
+  border-bottom: 3px solid #D8D9DB;
+  font-size: 1.7rem;
+  cursor: pointer;
+ 
+}
+.text-collection{
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  height: auto;
+
+}
+.Vetement{
+  width: auto;
+  height: auto;
+  padding: 3%;
+ 
+}
+.Vetement ul{
+  padding: 10%;
+}
+.Accessoire ul{
+  padding: 10%;
+}
+.Accessoire{
+  width: auto;
+  height: auto;
+  padding: 3%;
+
+}
+ul{
+  list-style: none;
+  color: black;
+}
+.Vetement_ul li{
+  padding: 15%;
+  font-size: 18px;
+  color: #AA974C;
+  cursor: pointer;
+
+}
+
+
+.Accesoire_ul li{
+  padding: 15%;
+  font-size: 20px;
+  color: #AA974C;
+  cursor: pointer;
+}
+/* #collection_btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+} */
+ 
+.fleche{
+    width: 20px;
+    height: 20px;
+    filter: contrast(0);
+}
+.liste li a{
+  color: #AA974C;
+  text-decoration: none;
+  font-size: 25px;
+  transition: 0.5s;
+}
+.liste li a:hover{
+  font-size: 27px;  
+}
+.profilIcon{
+  color: gray;
+  width: 35px !important;
+  height: 40px !important;
+  margin-top: 3px;
+}

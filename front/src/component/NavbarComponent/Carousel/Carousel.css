@@ -1,0 +1,13 @@
+.carousel .thumbs{
+    visibility: hidden;
+}
+.carousel .slider-wrapper{
+    height: 1000px;
+}
+.carousel.carousel-slider{
+    height: 535px;
+    user-select: none;
+}
+.thumbs-wrapper{
+    display: none;
+  }

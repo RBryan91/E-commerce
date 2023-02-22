@@ -1,0 +1,144 @@
+.inputtypesumbit{
+    display: flex;
+}
+.inputtypesumbit input{
+    margin-right: 13px;
+}
+.pdeladiv{
+    font-weight: bold;
+    font-size: 25px;
+}
+.paiementknown{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 2% auto;
+}
+
+#form_buttonpaiementvi{
+    margin-top: 2%;
+    margin-left: 44%;
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+}
+.whitepp{
+    color: white;
+}
+.containerpaiementvisiteurrrr{
+    width: 80%;
+
+    
+    background-color: white;
+    margin: auto;
+    }
+#form_buttonpaiementvisiteurrrr {
+    margin-top: 140%;
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  .radiopaiement{
+    
+    margin: 5% auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+
+  }
+  .radiopimp{
+    display: flex;
+  }
+  .butondepaiementvs{
+    
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  .adresseknown{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 5% auto;
+  }
+  
+  .adresseknown p{
+    color: white;
+  }
+  #form_buttonpaiementcss {
+    margin-left: 60px;
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  
+  
+  #form_buttonpaiementvisiteurrrr:hover {
+    background: #474544;
+    color: #F2F3EB;
+  }
+  #form_buttonpaiementvi:hover {
+    background: #474544;
+    color: #F2F3EB;
+  }
+  .btn-white{
+    background-color: white;
+  }
+
+  .form22 {
+    padding: 4%;
+  }

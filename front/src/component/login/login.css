@@ -1,0 +1,117 @@
+body{
+    margin-top: 0;
+    background-image: linear-gradient(to bottom, #061f37, #061f37, #061f37, #061f37, #061f37);   
+}
+#root{
+    height: 45vw;
+}
+.cont2{
+    background-image: url(./images/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 37vw;
+    border-radius: 20px;
+    margin-top: 85px;
+    box-shadow:5px 10px 8px 10px #000000bb;
+}
+.emaildiv2{
+    margin-top: 80px;
+}
+.form2{
+
+    height: 505px;
+    padding-top: 20px;
+    border-radius: 20px;
+    color: white;
+    font-size: 1vw;
+}
+.form-group{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+ #button{
+    margin-top: 15px;
+    margin-left: 30px;
+    background-color: rgb(7, 3, 36);
+    border-color: rgb(7, 3, 36) ;
+    transition: 0.5s;
+} 
+#button:hover{
+    background-color: #203647;
+    border-color: #203647;
+}
+.form-group > input{
+    width: 90%;
+    font-size: 1vw;
+    margin-top: 10px;
+    color: white;
+    outline: 0;
+    border-width: 0 0 1px;
+    background-color: #1e1a17;
+}
+.form-group > select{
+    width: 100%;
+    font-size: 1vw;
+    background-color: #1e1a17;
+    outline: 0;
+    margin-top: 10px;
+    color: white;
+    border-width: 0 0 1px;
+}
+.form-group > input:focus{
+    outline: none;
+    box-shadow: none!important;
+    border-width: 0 0 1px;
+    color: white;
+    background-color: #1e1a17;
+}
+.form-register p{
+    color: white;
+}
+
+.link-register{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.btn-retour{
+    margin-left: 10px;
+}
+.link-register > .btn{
+    background-color: rgb(7, 3, 36);
+    border-color: rgb(7, 3, 36) ;
+    transition: 0.5s;
+    width: 37%;
+    font-size: 13px;
+}
+
+.link-register > .btn:hover{
+    background-color: #203647;
+    border-color: #203647;
+}
+
+.link-register{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.btn-retour{
+    margin-left: 10px;
+}
+.link-register > .btn{
+    background-color: rgb(7, 3, 36);
+    border-color: rgb(7, 3, 36) ;
+    transition: 0.5s;
+    width: 37%;
+    font-size: 13px;
+}
+
+.link-register > .btn:hover{
+    background-color: #203647;
+    border-color: #203647;
+}
+
+.btn-registerlogin {
+    background-color: rgb(7, 3, 36) !important;
+    border-color: rgb(7, 3, 36) !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

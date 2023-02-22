@@ -1,0 +1,122 @@
+.searchInputs{
+    display: flex;
+    transition: 2s;
+    margin-bottom: 10px;
+    
+}
+
+.search{
+    transition: 2s;
+}
+.search input{
+    background-color: white;
+    border: 0;
+    border-radius: 2px;
+    font-size: 18px;
+    padding: 15px;
+    height: 30px;
+    width: 170px;
+
+}
+
+.searchInputs > input{
+    outline: none;
+    color: white;
+    box-shadow: none!important;
+    background-color: #061f37;
+    border-width: 0 0 1px;
+    border-bottom-color: white;
+    margin-bottom: 7px;
+    
+
+}
+.searchInputs > input:focus{
+    outline: none;
+    border-width: 0 0 1px;
+    border-bottom-color: white;
+    color: white;
+    box-shadow: none!important;
+    background-color: #061f37;
+}
+.searchIcon svg{
+    font-size: 35px;
+}
+.dataResult{
+    height: 100p;
+}
+.searchIcon button{
+    height: 30px;
+    background-color:#061f37;
+    border-width: 0 0 0 0;
+    margin-top: 10px;
+    
+}
+.searchIcon2 button{
+    height: 30px;
+    background-color:#061f37;
+    border-width: 0 0 0 0;
+    margin-bottom: 7px;
+    margin-right: 20px;
+}
+.croixIcone > button{
+    height: 30px;
+    background-color:#061f37;
+    border-width: 0 0 0 0;
+
+    position: relative;
+    left: 215px;
+    top: 32px;
+   
+}
+.icon{
+    filter: contrast(0);
+    width: 35px !important;
+    height: 35px !important;
+}
+
+.InstResult{
+    background-color:white;
+    height: 330px;
+    width: 640px !important;
+    position: absolute;
+    top: 90px;
+    z-index: 1;
+    right: 30px;
+    overflow: hidden;
+    overflow-y: auto;
+    display: inline-block;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 1px black;
+
+
+}
+.InstResult::-webkit-scrollbar{
+    display: none;
+}
+.searchCadre{
+    width: 100%;
+    border-radius: 0px !important;
+    margin-left: 20px;
+    border-color: none!important;
+    
+
+}
+
+.searchCard__img{
+    height: 200px;
+    width: 100%!important;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.resultVide{
+    display: none;
+}
+.InstResult > div{
+    display: inline-block;
+}
+.imageCd{
+    width: 25%;
+}
+.bodyCd{
+    width: 75%;
+}

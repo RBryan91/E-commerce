@@ -1,0 +1,15 @@
+.titre{
+    display: flex;
+    background-color: #061F37;
+    justify-content: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #AA974C;
+}
+.titre h1{
+    color: #AA974C;
+    cursor: pointer;
+    font-size: xx-large;
+    padding-left: 35px;
+    margin-top: 25px;
+
+}

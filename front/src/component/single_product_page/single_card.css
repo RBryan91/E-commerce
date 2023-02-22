@@ -1,0 +1,136 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.Single_product {
+    background-image: linear-gradient(to bottom, #09233d, #09233d, #09233d, #09233d, #09233d);
+    display: flex;
+    height: 85vh;
+}
+
+.product {
+    width: 40%;
+    margin-left: 140px;
+    margin-top: 50px;
+    color: white;
+}
+
+.product_price {
+    font-size: 40px;
+    text-align: center;
+    height: 50px;
+}
+
+.product_oldprice {
+    text-decoration: line-through;
+}
+
+.product_newprice {
+    color: red;
+}
+
+.product_title {
+    text-align: center;
+}
+
+.img_product {
+    width: 300px;
+    height: 300px;
+    margin-left: 230px;
+    margin-top: 50px;
+}
+
+.img_product>img {
+    height: 430px;
+    width: 320px;
+}
+
+.product-btn {
+    padding-left: 0px;
+    margin-top: 20px;
+}
+
+.ajout-panier {
+    margin-left: 10px;
+}
+
+.product_desc {
+    margin-top: 0px;
+}
+
+.indisponible {
+    color: red;
+}
+
+.product-stock {
+    height: 30px;
+    width: 200px;
+}
+
+#img_color_list {
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+}
+
+.img_color_list_container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5%;
+}
+
+.comments{
+    margin-left: 5%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SingleComment {
+    margin-top: 10px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #09233d, #09233d, #09233d, #09233d, #09233d);
+    border-radius: 10px;
+}
+
+.SingleComment p{
+    color: white;
+    margin-left: 10px;
+}
+
+.end-comment{
+    margin-right: 10px;
+    float: right;
+}
+
+#titre-comment{
+    margin-left: 8%;
+}
+
+.container-input-comment{
+    margin-left: 5%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 100px;
+    background-image: linear-gradient(to bottom, #09233d, #09233d, #09233d, #09233d, #09233d);
+}
+
+.input-comment{
+    background-image: linear-gradient(to bottom, #09233d, #09233d, #09233d, #09233d, #09233d);
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.btn-comment {
+    background-color: #09233d;
+    border-radius: 5px;
+    color: white;
+    border-color: white;
+}

@@ -1,0 +1,112 @@
+.titreedit{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#root{
+    height: 48vw;
+}
+
+.containerProfil {
+    background-image: url(./images/back3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    border-radius: 20px;
+    margin-top: 55px;
+    box-shadow:5px 10px 8px 10px #000000bb;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+}
+.form{
+
+    height: 505px;
+    padding-top: 20px;
+    border-radius: 20px;
+    color: white;
+    font-size: 1vw;
+}
+
+.form-group{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+ #button{
+    margin-top: 40px !important;
+    margin-left: 30px;
+    background-color: rgb(7, 3, 36);
+    border-color: rgb(7, 3, 36) ;
+    transition: 0.5s;
+}
+#buttonprofilchange{
+    background-color: rgb(7, 3, 36);
+    border-color: rgb(7, 3, 36) ;
+    transition: 0.5s;
+} 
+#buttonnnn{
+    background-color: rgb(7, 3, 36);
+    border-color: rgb(7, 3, 36) ;
+    transition: 0.5s;
+}
+#linkkk{
+    text-decoration: none;
+    color: white;
+}
+#buttonnnn:hover{
+    background-color: #203647;
+    border-color: #203647;
+}
+#button:hover{
+    background-color: #203647;
+    border-color: #203647;
+}
+.form-group > input{
+    width: 100% !important;
+    font-size: 1vw;
+    margin-top: 10px;
+    color: white;
+    outline: 0;
+    border-width: 0 0 1px;
+    background-color: #1e1a17;
+}
+.form-group > select{
+    width: 100%;
+    font-size: 1vw;
+    background-color: #1e1a17;
+    outline: 0;
+    margin-top: 10px;
+    color: white;
+    border-width: 0 0 1px;
+    height: 40px;
+}
+.form-group > input:focus{
+    outline: none;
+    border-width: 0 0 1px;
+    color: white;
+    box-shadow: none!important;
+    background-color: #1e1a17;
+}
+
+.form-group > select:focus{
+    outline: none;
+    border-width: 0 0 1px;
+    color: white;
+    box-shadow: none!important;
+    background-color: #1e1a17;
+}
+.btn-ret> .btn{
+    background-color: rgb(7, 3, 36);
+    border-color: rgb(7, 3, 36) ;
+    transition: 0.5s;
+    width: 30%;
+    position: relative;
+    bottom: 12px;
+    font-size: 0.7rem;
+}
+.btn-ret> .btn:hover{
+    background-color: #203647;
+    border-color: #203647;
+}

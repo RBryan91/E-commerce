@@ -1,0 +1,81 @@
+.container-product,.container-product-promo,.container-product-nouveau {
+  display: grid;
+  gap: 6rem;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  height: auto; 
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.promo h2{
+  color: #AA974C;
+}
+.promo{
+  border: 2px solid #AA974C;
+  margin-bottom: 10px;
+}
+.nouveau h2{
+  color: #AA974C;
+}
+.nouveau{
+  border: 2px solid #AA974C;
+}
+
+.card {
+  box-shadow: 0 0 5px 0px #AA974C; 
+  border-radius: 0px !important;
+  border-color: #AA974C !important;
+  transition: 0.5s;
+  margin-left: 15px;
+  width: 90%;
+
+}
+.card:hover{
+  transform: scale(1.01);
+}
+
+.card__body {
+  background-color: white;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-direction : column;
+  text-decoration: none;
+  height: 115px;
+  color: black!important;
+  border-top:1px solid #cdcccc !important;
+}
+
+
+.card__title {
+  line-height: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem !important;
+}
+
+.card__price {
+  font-size: 1rem!important;
+  margin-top: 0.6rem;
+  font-weight: 600!important;
+}
+.card__oldprice {
+  text-decoration: line-through;
+}
+.card__newprice {
+  color: red;
+}
+.link_none{
+  text-decoration: none;
+  color: black;
+} 
+.link_none:hover{
+  color: #12103a !important;
+}
+.card__img{
+  height: 400px;
+  border-radius: 0px !important;
+  
+}

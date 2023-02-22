@@ -1,0 +1,90 @@
+.contenuPanier1{
+    position: absolute;
+    background-color: rgb(194, 203, 242);
+    width: 26%;
+    min-height: 240px;
+    max-height: 400px;
+    right: 220px;
+    z-index: 1;
+    top: 70px;
+    overflow-y: auto;
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px 2px black;
+  }
+  
+.contenuPanier1::-webkit-scrollbar{
+  display: none;
+}
+
+  .contenuPanier1 > div{
+    display: inline-block;
+  }
+  .imgPanier{
+    width: 25%;
+    margin-top: 5px;
+    height: auto;
+  }
+  .panierCard__body{
+    height: 120px;
+  }
+  .bodyPanier{
+    width: 75%;
+    position: relative;
+    bottom: 30px;
+    
+  }
+  .panierCard__title{
+    font-size: 0.9rem !important;
+  }
+  .panierCard__img{
+    width: 100% !important;
+    height: 140px;
+  }
+.MainCard{
+    width: 100% !important;
+    position: relative;
+    right: 14px;}
+  
+.panierCard__price{
+    font-size: 0.8rem!important;
+    font-weight: 600!important;
+    position: relative;
+    top:12px
+    }
+.panierCard__quantity{
+      font-size: 0.8rem!important;
+      position: relative;
+      top: 5px;
+ }
+.panierCard__size{
+  font-size: 0.8rem!important;
+}
+ .total{
+  width: 100%;
+  height: 100px;
+  text-align: center;
+
+
+  /* float: right; */
+  
+ }
+ .total p{
+  margin-top: 10px;
+  color: black;
+ }
+ .link_none > button{
+  background-color: black!important;
+  color: white;
+  border-color: black;
+  border-radius: 20%;
+  transition: 0.6s;
+
+ }
+ .link_none > button:hover{
+  background-color: white !important;
+  color: black;
+  border-color: white;
+ }
+ .vide{
+  color: black;
+ }

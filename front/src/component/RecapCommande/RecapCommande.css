@@ -1,0 +1,84 @@
+.mainReacpCommande{
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+h1,h2,h3{
+    color: white;
+}
+
+.bodyRecapCommande{
+    width: 70%;
+    height: auto;
+    background-color: rgb(117, 179, 176);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+.bodyRecapCommande > h3{
+    font-size: 1rem;
+     font-weight: 800;
+}
+.bodyRecapCommande > h2{
+    font-size: 1rem;
+     font-weight: 800;
+    
+}
+.bodyRecapCommande p{
+    color: black;
+    font-weight: 800;
+}
+.contenaireRecapdetails{
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divImgRecap{
+    width: 30% !important;
+    height: auto;
+}
+.divdetailsRecap{
+    width: 70%;
+    height: 160px;
+}
+.recapCard__img{
+    height: 160px;
+    width: 100%;
+}
+.cardRecap{
+    height: 160px !important;
+    width: 100%;
+    margin-left: 0 !important;
+}
+.bodyDetailsImgDetails{
+    width: 100% !important;
+    display: flex;
+    margin-top: 10px;
+    background-color: green;
+}
+.recapCard__price{
+    font-weight: 800  !important;
+    margin-top: 10px !important;
+}
+.recapCard__newprice{
+    font-weight: 800 !important;
+    margin-top: 10px !important;
+    color: rgb(141, 21, 3);
+}
+.reacpCard__size{
+    margin-top: 10px !important;
+}
+.recapCard__body{
+    width: 100% !important;
+    font-size: 1rem;
+}
+
+.btn-print {
+    position: absolute;
+    left: 47%;
+    bottom: 5%;
+}

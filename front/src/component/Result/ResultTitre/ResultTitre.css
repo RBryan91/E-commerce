@@ -1,0 +1,30 @@
+.div-product{
+    width: 100%!important;
+}
+.messageErreur > p{
+    color: white;
+    font-size: 30px;
+}
+.card{
+margin-right:90px;
+}
+.messageErreur{
+    width: 700px;
+    height: auto;
+    margin-left: 170px;
+    margin-top: 100px;
+    text-align: center;
+}
+.sad{
+    width: 60px !important;
+    height: 40px !important;
+    }
+    
+.retourLink{
+    text-decoration: none;
+    color:rgb(134, 254, 90);
+    transition: 0.5s;
+} 
+.retourLink:hover{
+    color: white;
+}

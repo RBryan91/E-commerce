@@ -1,0 +1,156 @@
+.containeur{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+  
+  } 
+.containeur .card{
+    flex-direction: row;
+    width: 80%;
+    height: 200px;
+    margin: 20px;
+  } 
+.containeur .card__body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+   
+    
+  }  
+.ok{
+  display: flex;
+}
+.containeur .card__img{
+    padding: 20px;
+    width: 20%;
+    height: auto;
+  } 
+.containeur .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+.paniervisiteurdisplay{
+    text-align: center;
+  }
+.paniervisiteurdisplay > p{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+.commander{
+    width: 20%;
+    height: 400px;
+    margin-top: 15px;
+    text-align: center;    
+    background-color: rgb(192, 212, 230);
+  }
+.commander p{
+    color: black;
+  }
+.containeurprincipal{
+    display: flex;
+  }
+.titrePanier{
+    margin-top: 40px;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    color: #AA974C;
+    padding: 20px;
+    border-bottom: 1px solid;
+  
+  }
+.mainPanier{
+    width: 100%;
+    
+  }
+.bodyCardPanier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.btn-commander{
+    background-color: #777777; 
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 16px;
+  }
+.commandeVisiteur:hover{
+  color: blue;
+}
+.link-decoration{
+    text-decoration: none;
+    color: white !important;
+  
+  }
+.totalpaniervisiteur{
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding-top: 30px;
+    padding-bottom: 30px; 
+  }
+.btn-cont{
+    text-decoration: none;
+    color: black;
+  }
+.changeQuantity{
+    width: 10%;
+    text-align: center;
+  
+  }
+  
+.trash{
+    margin-left: 50px;
+    cursor: pointer;
+    color:black;
+  }
+    
+.paniervisiteurdisplay h3{
+    color: white;
+    padding-top: 2%;
+  
+    width : 50%;
+    margin-left: auto;
+    margin-right: auto;
+   
+  } 
+  
+.noproduitpanier{
+    display: flex;
+    width : 100%;
+    padding-top: 2%;
+    justify-content: center;
+  }
+.panniervidenoconnect{
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 1%;
+      padding-top: 2%;
+      border-style: solid;
+      color: white;
+      margin-left: auto;
+      margin-right: auto;
+    
+  }
+.paniervide{
+    margin-top: 40px;
+    text-align: center;
+    color: #AA974C !important;
+    padding: 20px;
+    border-bottom: 1px solid;
+  }
+.votrepanierestvide{
+    margin-top: 1%;
+  }
+.btn-cont{
+  color: white;
+}
