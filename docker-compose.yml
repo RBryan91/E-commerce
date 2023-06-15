@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql
+    container_name : db_commerce 
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql 
+    environment:
+       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    networks:
+      - dev
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpamin_commerce
+    depends_on:
+      - db
+    ports:
+      - 8080:80
+    environment:
+        PMA HOST: db
+    networks:
+      - dev
+
+  api:
+    build: docker
+    container_name: api
+    ports:
+      - 8000:80
+    volumes:
+      - ./docker/vhosts:/etc/apache2/site-enabled
+      - ./:/var/www
+    networks:
+      - dev
+      
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: frontcommerce
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front:/app
+    depends_on:
+      - api
+    networks:
+      - dev
+
+networks:
+  dev:
+
+volumes:
+  db-data:  
