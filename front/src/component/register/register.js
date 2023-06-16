@@ -27,7 +27,7 @@ const Register = () => {
 
   useEffect(() => {
     if (id_user !== null) {
-      axios.post('https://localhost:8000/api/paniers', {
+      axios.post('http://localhost:8000/api/paniers', {
         "user": "api/users/" + id_user
       })
         .then((res) => {
@@ -44,14 +44,14 @@ const Register = () => {
             let PrixPoid = 0;
             let country = "";
             for (let i = 0; i < cook.length; i++) {
-              axios.post('https://localhost:8000/api/panier_articles', {
+              axios.post('http://localhost:8000/api/panier_articles', {
                 "panier": "api/paniers/" + id_panier,
                 "articles": cook[i]['@id'],
                 "quantity": cook[i].quantity,
                 "size": "api/sizes/" + cook[i].size
               })
             }
-            axios.get("https://localhost:8000/api/panier_articles?panier=" + id_panier)
+            axios.get("http://localhost:8000/api/panier_articles?panier=" + id_panier)
               .then((res) => {
                 article = res.data["hydra:member"];
                 cook.map((item) => {
@@ -70,20 +70,20 @@ const Register = () => {
                 if (weight > 6) {
                   weight = 6
                 }
-                axios('https://localhost:8000/api/poids?poid=' + weight)
+                axios('http://localhost:8000/api/poids?poid=' + weight)
                   .then((response) => {
                     PrixPoid = (response.data["hydra:member"][0].prix)
                   })
-                axios('https://localhost:8000/api/users/15')
+                axios('http://localhost:8000/api/users/15')
                   .then((res) => {
                     country = res.data.Pays
-                    axios("https://localhost:8000/api/pays?pays=" + country)
+                    axios("http://localhost:8000/api/pays?pays=" + country)
                       .then((res) => {
                         if (res.data["hydra:totalItems"] !== 0) {
                           PrixPays = (res.data["hydra:member"][0].prix)
                         }
                         else {
-                          axios("https://localhost:8000/api/pays?pays=autre")
+                          axios("http://localhost:8000/api/pays?pays=autre")
                             .then((resp) => {
                               PrixPays = (resp.data["hydra:member"][0].prix)
                             })
@@ -120,7 +120,7 @@ const Register = () => {
     }
     else {
       const configuration = { headers: { 'Content-Type': "application/json", Accept: "application/json" } }
-      axios.post('https://localhost:8000/api/users', { email, password, role, isActive, Nom, Prenom, Tel, Adresse, Pays, Ville, zipcode }, configuration)
+      axios.post('http://localhost:8000/api/users', { email, password, role, isActive, Nom, Prenom, Tel, Adresse, Pays, Ville, zipcode }, configuration)
         .then((res) => {
           setId_user(res.data.id)
         });

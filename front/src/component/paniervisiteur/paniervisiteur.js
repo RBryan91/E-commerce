@@ -24,7 +24,7 @@ function PanierVisiteur() {
     setArray(cookies.get('article'))
 
     if (array === null || array.length === 0 || array === []) {
-      axios.get("https://localhost:8000/api/articles")
+      axios.get("http://localhost:8000/api/articles")
         .then((res) => {
           setArticlevide(res.data["hydra:member"])
         })
@@ -54,7 +54,7 @@ function PanierVisiteur() {
     }
   }
   if (array !== null) {
-    axios('https://localhost:8000/api/poids?poid=' + weight)
+    axios('http://localhost:8000/api/poids?poid=' + weight)
       .then((res) => {
         setPrixPoid(parseFloat(res.data["hydra:member"][0].prix))
       })

@@ -16,7 +16,7 @@ function CardProduct() {
 
 
   useEffect(() => {
-    axios("https://localhost:8000/api/articles")
+    axios("http://localhost:8000/api/articles")
       .then((response) => {
         setProduct(response.data["hydra:member"])
         setError(null);

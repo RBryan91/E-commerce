@@ -15,14 +15,14 @@ export default function Card_collection() {
 
 
   useEffect(() => {
-    axios("https://localhost:8000/api/categories")
+    axios("http://localhost:8000/api/categories")
       .then((response) => {
         setCategorie(response.data["hydra:member"])
         setError(null);
       })
       .catch(setError);
 
-    axios("https://localhost:8000/api/souscategories")
+    axios("http://localhost:8000/api/souscategories")
       .then((res) => {
         setSousCategorie(res.data["hydra:member"])
         setError(null);

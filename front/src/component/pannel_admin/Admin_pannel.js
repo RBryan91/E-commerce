@@ -6,7 +6,7 @@ function AdminPannel() {
     return (
         <div>
         <Link className="btn-back-admin" to={"/"}>Retour</Link>
-        <HydraAdmin basename="/admin" entrypoint="https://localhost:8000/api">
+        <HydraAdmin basename="/admin" entrypoint="http://localhost:8000/api">
             <ResourceGuesser name={"articles"} />
             <ResourceGuesser name={"users"} />
             <ResourceGuesser name={"categories"} />

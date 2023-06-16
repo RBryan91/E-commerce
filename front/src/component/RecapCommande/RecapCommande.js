@@ -52,12 +52,12 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
             numero += alph[Math.floor(Math.random() * 46)]
         }
         setNumero(numero)
-        axios.get("https://localhost:8000/api/panier_articles?panier=" + id_panier)
+        axios.get("http://localhost:8000/api/panier_articles?panier=" + id_panier)
             .then((response) => {
                 setId_delete(response.data["hydra:member"])
             })
         const configuration = { headers: { 'Content-Type': "application/json", Accept: "application/ld+json" } }
-        axios.post('https://localhost:8000/api/commandes', {
+        axios.post('http://localhost:8000/api/commandes', {
             "user": "api/users/" + user,
             "numero": numero,
             "montant": String(montant)
@@ -66,7 +66,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
 
                 const apicommande = res.data['@id'].substring(1)
                 for (let i = 0; i < NBArticle.length; i++) {
-                    axios.post('https://localhost:8000/api/commande_articles', {
+                    axios.post('http://localhost:8000/api/commande_articles', {
                         "commande": apicommande,
                         "articles": NBArticle[i].articles['@id'].substring(1),
                         "quantity": String(NBArticle[i].quantity),
@@ -79,19 +79,19 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
             if (frais.articles[i].articles.Size !== false) {
                 const id_size = frais.articles[i].size["@id"].split("/").pop()
                 const id_article = parseInt(frais.articles[i].articles.id)
-                axios.get('https://localhost:8000/api/stocks?articles=' + id_article + '&size=' + id_size)
+                axios.get('http://localhost:8000/api/stocks?articles=' + id_article + '&size=' + id_size)
                     .then((reponse) => {
                         const quantite = parseInt(frais.articles[i].quantity)
                         const id_stock = reponse.data['hydra:member'][0].id
                         const NBStock = parseInt(reponse.data['hydra:member'][0].NBStock) - quantite
                         const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/ld+json" } }
                         const apiArticle = frais.articles[i].articles["@id"]
-                        axios.patch('https://localhost:8000/api/stocks/' + id_stock, { "NBStock": NBStock }, configuration)
-                        axios.get('https://localhost:8000' + apiArticle)
+                        axios.patch('http://localhost:8000/api/stocks/' + id_stock, { "NBStock": NBStock }, configuration)
+                        axios.get('http://localhost:8000' + apiArticle)
                             .then((ress) => {
                                 const StockTotal = String(ress.data.nbStock - quantite)
                                 console.log(apiArticle)
-                                axios.patch('https://localhost:8000' + apiArticle, { "nbStock": StockTotal }, configuration)
+                                axios.patch('http://localhost:8000' + apiArticle, { "nbStock": StockTotal }, configuration)
                             })
                     })
             }
@@ -99,11 +99,11 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                 const apiArticle = frais.articles[i].articles["@id"]
                 const quantite = parseInt(frais.articles[i].quantity)
                 const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/ld+json" } }
-                axios.get('https://localhost:8000' + apiArticle)
+                axios.get('http://localhost:8000' + apiArticle)
                     .then((ress) => {
                         const StockTotal = String(ress.data.nbStock - quantite)
                         console.log(apiArticle)
-                        axios.patch('https://localhost:8000' + apiArticle, { "nbStock": StockTotal }, configuration)
+                        axios.patch('http://localhost:8000' + apiArticle, { "nbStock": StockTotal }, configuration)
                     })
             }
         }
@@ -111,7 +111,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
 
     if (id_delete !== null) {
         id_delete.map((item) => {
-            axios.delete("https://localhost:8000/api/panier_articles/" + item.id)
+            axios.delete("http://localhost:8000/api/panier_articles/" + item.id)
         })
     }
 

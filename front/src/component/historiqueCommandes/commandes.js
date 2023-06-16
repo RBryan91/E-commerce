@@ -13,7 +13,7 @@ export default function HistoriqueCommandes() {
   useEffect(() => {
     if (id_user !== null) {
       axios
-        .get("https://localhost:8000/api/commandes?user=" + id_user)
+        .get("http://localhost:8000/api/commandes?user=" + id_user)
         .then((response) => {
           console.log("THISSS:", response.data["hydra:member"]);
           setArticle(response.data["hydra:member"]);

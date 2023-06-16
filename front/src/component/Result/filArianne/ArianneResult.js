@@ -21,7 +21,7 @@ export default function ArianneResult() {
 
         if (array.indexOf("categorie") !== -1) {
             const id = pathId.id;
-            axios("https://localhost:8000/api/categories/" + id)
+            axios("http://localhost:8000/api/categories/" + id)
                 .then((response) => {
                     setIdcategorie(id)
                     setCategorie(response.data.name)
@@ -29,13 +29,13 @@ export default function ArianneResult() {
         }
         if (array.indexOf("souscategorie") !== -1) {
             const id2 = pathId.id;
-            axios("https://localhost:8000/api/souscategories/" + id2)
+            axios("http://localhost:8000/api/souscategories/" + id2)
                 .then((response) => {
                     let string = response.data.name
                     let path2 = response.data.categorie
                     setIdsousCategorie(id2)
 
-                    axios("https://localhost:8000" + path2)
+                    axios("http://localhost:8000" + path2)
                         .then((res) => {
                             setSousCategorie(string)
                             setCategorie(res.data.name)

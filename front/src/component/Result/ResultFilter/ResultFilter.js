@@ -18,7 +18,7 @@ export default function ResultFilter() {
     useEffect(() => {
         if (cat === "CAT") {
             axios
-                .get("https://localhost:8000/api/articles?categorie=" + id + "&titre=" + titre)
+                .get("http://localhost:8000/api/articles?categorie=" + id + "&titre=" + titre)
 
                 .then((response) => {
                     setProduct(response.data["hydra:member"]);
@@ -28,7 +28,7 @@ export default function ResultFilter() {
         }
         if (cat === "SCAT") {
             axios
-                .get("https://localhost:8000/api/articles?souscategorie=" + id + "&titre=" + titre)
+                .get("http://localhost:8000/api/articles?souscategorie=" + id + "&titre=" + titre)
 
                 .then((response) => {
                     setProduct(response.data["hydra:member"]);

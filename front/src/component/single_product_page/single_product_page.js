@@ -34,7 +34,7 @@ export default function SingleProduct() {
     },[change])
 
     useEffect(() => {
-        axios("https://localhost:8000/api/comments?article=" + path.id)
+        axios("http://localhost:8000/api/comments?article=" + path.id)
             .then((resp) => {
                 if (resp.data["hydra:totalItems"] !== 0) {
                     setComments(resp.data["hydra:member"])
@@ -50,7 +50,7 @@ export default function SingleProduct() {
         }, 3000);
         
 
-        axios("https://localhost:8000/api/articles/" + path.id)
+        axios("http://localhost:8000/api/articles/" + path.id)
             .then((response) => {
                 setProduct(response.data)
                 setColor(response.data.color)
@@ -58,12 +58,12 @@ export default function SingleProduct() {
                 if (tabId === undefined) {
                     cookies.set('click', [path.id])
                     const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/json" } }
-                    axios.patch('https://localhost:8000/api/articles/' + path.id, { click: response.data["click"] + 1 }, configuration)
+                    axios.patch('http://localhost:8000/api/articles/' + path.id, { click: response.data["click"] + 1 }, configuration)
                 }
                 else {
                     if (tabId.indexOf(path.id) === -1) {
                         const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/json" } }
-                        axios.patch('https://localhost:8000/api/articles/' + path.id, { click: response.data["click"] + 1 }, configuration)
+                        axios.patch('http://localhost:8000/api/articles/' + path.id, { click: response.data["click"] + 1 }, configuration)
                         tabId.push(path.id)
                         cookies.set('click', tabId)
                     }
@@ -71,7 +71,7 @@ export default function SingleProduct() {
             })
 
 
-        axios("https://localhost:8000/api/stocks?articles=" + path.id + "&size=" + size)
+        axios("http://localhost:8000/api/stocks?articles=" + path.id + "&size=" + size)
             .then((response) => {
                 if (response.data["hydra:totalItems"] !== 0) {
                     setStock(response.data["hydra:member"][0].NBStock)
@@ -86,7 +86,7 @@ export default function SingleProduct() {
     useEffect(() => {
         if (color === true) {
             let titre = product.titre.split(" ").shift()
-            axios("https://localhost:8000/api/articles?titre=" + titre + "&color=true")
+            axios("http://localhost:8000/api/articles?titre=" + titre + "&color=true")
                 .then((res) => {
                     setList(res.data["hydra:member"])
                 })
@@ -99,21 +99,21 @@ export default function SingleProduct() {
         let id_panier = "api/paniers/" + localStorage.getItem('id_panier');
         let id_size = "api/sizes/" + size;
 
-        axios("https://localhost:8000/api/panier_articles?panier=" + id_panier + "&articles=" + id_article + "&size=" + id_size)
+        axios("http://localhost:8000/api/panier_articles?panier=" + id_panier + "&articles=" + id_article + "&size=" + id_size)
             .then((response) => {
                 let NumberArticle = response.data["hydra:totalItems"];
 
                 if (NumberArticle === 0) {
                     const configuration = { headers: { 'Content-Type': "application/json", Accept: "application/json" } }
-                    axios.post("https://localhost:8000/api/panier_articles", { "panier": id_panier, "articles": id_article, "quantity": 1, "size": id_size }, configuration)
+                    axios.post("http://localhost:8000/api/panier_articles", { "panier": id_panier, "articles": id_article, "quantity": 1, "size": id_size }, configuration)
                 }
 
                 if (NumberArticle !== 0) {
                     let id = response.data["hydra:member"][0].id
-                    axios("https://localhost:8000/api/panier_articles/" + id)
+                    axios("http://localhost:8000/api/panier_articles/" + id)
                         .then((response) => {
                             const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/json" } }
-                            axios.patch('https://localhost:8000/api/panier_articles/' + id, { quantity: response.data["quantity"] + 1 }, configuration)
+                            axios.patch('http://localhost:8000/api/panier_articles/' + id, { quantity: response.data["quantity"] + 1 }, configuration)
                         })
 
                 }
@@ -172,7 +172,7 @@ export default function SingleProduct() {
     function commenter() {
         if (avis !== "") {
             const configuration = { headers: { 'Content-Type': "application/json", Accept: "application/ld+json" } }
-            axios.post('https://localhost:8000/api/comments', {
+            axios.post('http://localhost:8000/api/comments', {
                 "article": "api/articles/" + path.id,
                 "user": "api/users/" + id,
                 "message": avis

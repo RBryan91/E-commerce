@@ -1,20 +1,20 @@
-# Utiliser une image de base avec Node.js préinstallé
-FROM node:20
+# pull official base image
+FROM node:16-alpine
 
-# Définir le répertoire de travail dans le conteneur
+# set working directory
 WORKDIR /app
 
-# Copier le fichier package.json et package-lock.json dans le répertoire de travail
-COPY package*.json ./
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-# Installer les dépendances de l'application
-RUN npm install
+# install app dependencies
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+RUN npm install react-scripts@5.0.1 -g --silent
 
-# Copier le reste des fichiers de l'application dans le répertoire de travail
-COPY . .
+# add app
+COPY . ./
 
-# Exposer le port sur lequel l'application écoute
-EXPOSE 3000
-
-# Commande par défaut pour exécuter l'application lorsque le conteneur démarre
-CMD [ "npm", "start" ]
+# start app
+CMD ["npm", "start"]

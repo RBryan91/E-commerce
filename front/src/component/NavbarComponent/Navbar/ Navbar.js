@@ -22,7 +22,7 @@ export default function Navbar() {
 
 
   useEffect(() => {
-    axios("https://localhost:8000/api/categories")
+    axios("http://localhost:8000/api/categories")
       .then((response) => {
         setCategorie(response.data["hydra:member"])
 

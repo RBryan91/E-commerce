@@ -18,7 +18,7 @@ export default function BarreRecherche() {
 
   useEffect(() => {
     axios
-      .get("https://localhost:8000/api/articles?titre=")
+      .get("http://localhost:8000/api/articles?titre=")
 
       .then((response) => {
         setProduct(response.data["hydra:member"]);

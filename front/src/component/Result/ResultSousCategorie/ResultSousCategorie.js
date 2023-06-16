@@ -15,7 +15,7 @@ export default function ResultSousCategorie() {
     const path = useParams()
 
     useEffect(() => {
-        axios("https://localhost:8000/api/articles?souscategorie=" + path.id)
+        axios("http://localhost:8000/api/articles?souscategorie=" + path.id)
             .then((response) => {
                 setProduct(response.data["hydra:member"])
                 setError(null);

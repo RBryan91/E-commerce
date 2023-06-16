@@ -24,10 +24,10 @@ function Panier() {
   useEffect(() => {
     console.log(article)
     if (id_panier !== null) {
-      axios.get("https://localhost:8000/api/panier_articles?panier=" + id_panier)
+      axios.get("http://localhost:8000/api/panier_articles?panier=" + id_panier)
         .then((response) => {
           if (response.data["hydra:totalItems"] === 0) {
-            axios.get("https://localhost:8000/api/articles")
+            axios.get("http://localhost:8000/api/articles")
               .then((res) => {
                 setArticlevide(res.data["hydra:member"])
               })
@@ -58,18 +58,18 @@ function Panier() {
 
   if (article.length > 0) {
     let country = article[0]['panier']['user'].Pays
-    axios("https://localhost:8000/api/pays?pays=" + country)
+    axios("http://localhost:8000/api/pays?pays=" + country)
       .then((res) => {
         if (res.data["hydra:totalItems"] !== 0) {
           setPrixPays(res.data["hydra:member"][0].prix)
         }
         else {
-          axios("https://localhost:8000/api/pays?pays=autre")
+          axios("http://localhost:8000/api/pays?pays=autre")
             .then((resp) => {
               setPrixPays(resp.data["hydra:member"][0].prix)
             })
         }
-        axios('https://localhost:8000/api/poids?poid=' + weight)
+        axios('http://localhost:8000/api/poids?poid=' + weight)
           .then((response) => {
             setPrixPoid(response.data["hydra:member"][0].prix)
           })
@@ -82,7 +82,7 @@ function Panier() {
     article.filter((res) => {
       if (parseInt(res.id) === parseInt(id_panier)) {
         article.splice(article.indexOf(res), 1);
-        axios.delete('https://localhost:8000' + res["@id"])
+        axios.delete('http://localhost:8000' + res["@id"])
           .then((res) => {
             setLength(article.length)
             setArticle(article)
@@ -99,11 +99,11 @@ function Panier() {
 
   async function setMoreQuantity(e) {
     let id_panier = e.target.value.substring(21)
-    axios("https://localhost:8000/api/panier_articles/" + id_panier)
+    axios("http://localhost:8000/api/panier_articles/" + id_panier)
       .then((response) => {
         let quantité = parseInt(response.data.quantity) + 1
         const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/ld+json" } }
-        axios.patch('https://localhost:8000/api/panier_articles/' + id_panier, { quantity: quantité }, configuration)
+        axios.patch('http://localhost:8000/api/panier_articles/' + id_panier, { quantity: quantité }, configuration)
           .then((res) => {
             setArticle(article)
             setLength(length + 1);
@@ -113,11 +113,11 @@ function Panier() {
 
   async function setLessQuantity(e) {
     let id_panier = e.target.value.substring(21)
-    axios("https://localhost:8000/api/panier_articles/" + id_panier)
+    axios("http://localhost:8000/api/panier_articles/" + id_panier)
       .then((response) => {
         let quantité = parseInt(response.data.quantity) - 1
         const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/ld+json" } }
-        axios.patch('https://localhost:8000/api/panier_articles/' + id_panier, { quantity: quantité }, configuration)
+        axios.patch('http://localhost:8000/api/panier_articles/' + id_panier, { quantity: quantité }, configuration)
           .then((res) => {
             setArticle(article)
             setLength(length - 1);

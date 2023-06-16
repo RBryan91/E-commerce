@@ -46,7 +46,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
 
     useEffect(() => {
         const configuration = { headers: { 'Content-Type': "application/json", Accept: "application/ld+json" } }
-        axios.post('https://localhost:8000/api/commandes', {
+        axios.post('http://localhost:8000/api/commandes', {
             "numero": numero,
             "montant": String(montant)
         }, configuration)
@@ -54,7 +54,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                 const apicommande = res.data['@id'].substring(1)
                 for (let i = 0; i < articles.length; i++) {
                     if (articles[i].Size === false) {
-                        axios.post('https://localhost:8000/api/commande_articles', {
+                        axios.post('http://localhost:8000/api/commande_articles', {
                             "commande": apicommande,
                             "articles": articles[i]['@id'].substring(1),
                             "quantity": String(articles[i].quantity),
@@ -62,7 +62,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                         })
                     }
                     else {
-                        axios.post('https://localhost:8000/api/commande_articles', {
+                        axios.post('http://localhost:8000/api/commande_articles', {
                             "commande": apicommande,
                             "articles": articles[i]['@id'].substring(1),
                             "quantity": String(articles[i].quantity),
@@ -78,19 +78,19 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                 const id_size = "api/sizes/" + frais.data[i].size
                 const id_article = frais.data[i].id
                 console.log(id_size, id_article)
-                axios.get('https://localhost:8000/api/stocks?articles=' + id_article + '&size=' + id_size)
+                axios.get('http://localhost:8000/api/stocks?articles=' + id_article + '&size=' + id_size)
                     .then((reponse) => {
                         const quantite = parseInt(frais.data[i].quantity)
                         const id_stock = reponse.data['hydra:member'][0].id
                         const NBStock = parseInt(reponse.data['hydra:member'][0].NBStock) - quantite
                         const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/ld+json" } }
                         const apiArticle = frais.data[i]["@id"]
-                        axios.patch('https://localhost:8000/api/stocks/' + id_stock, { "NBStock": NBStock }, configuration)
-                        axios.get('https://localhost:8000' + apiArticle)
+                        axios.patch('http://localhost:8000/api/stocks/' + id_stock, { "NBStock": NBStock }, configuration)
+                        axios.get('http://localhost:8000' + apiArticle)
                             .then((ress) => {
                                 const StockTotal = String(ress.data.nbStock - quantite)
                                 console.log(apiArticle)
-                                axios.patch('https://localhost:8000' + apiArticle, { "nbStock": StockTotal }, configuration)
+                                axios.patch('http://localhost:8000' + apiArticle, { "nbStock": StockTotal }, configuration)
                             })
                     })
             }
@@ -98,11 +98,11 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                 const apiArticle = frais.data[i]["@id"]
                 const quantite = parseInt(frais.data[i].quantity)
                 const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/ld+json" } }
-                axios.get('https://localhost:8000' + apiArticle)
+                axios.get('http://localhost:8000' + apiArticle)
                     .then((ress) => {
                         const StockTotal = String(ress.data.nbStock - quantite)
                         console.log(apiArticle)
-                        axios.patch('https://localhost:8000' + apiArticle, { "nbStock": StockTotal }, configuration)
+                        axios.patch('http://localhost:8000' + apiArticle, { "nbStock": StockTotal }, configuration)
                     })
             }
         }

@@ -22,7 +22,7 @@ function ResultSearch() {
 
   useEffect(() => {
     axios
-      .get("https://localhost:8000/api/articles?titre=" + path)
+      .get("http://localhost:8000/api/articles?titre=" + path)
 
       .then((response) => {
         setProduct(response.data["hydra:member"]);

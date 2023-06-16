@@ -14,7 +14,7 @@ export default function ResultCategorie() {
 
 
     useEffect(() => {
-        axios("https://localhost:8000/api/articles?categorie=" + path.id)
+        axios("http://localhost:8000/api/articles?categorie=" + path.id)
             .then((response) => {
                 setProduct(response.data["hydra:member"])
                 setError(null);

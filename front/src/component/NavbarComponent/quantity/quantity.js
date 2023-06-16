@@ -15,7 +15,7 @@ export default function PanierQuantity(ajout) {
 
   useEffect(() => {
     if (id_panier !== null && id_panier !== undefined) {
-      axios("https://localhost:8000/api/panier_articles?panier=api/paniers/" + id_panier)
+      axios("http://localhost:8000/api/panier_articles?panier=api/paniers/" + id_panier)
         .then((res) => {
           setArticle(res.data["hydra:member"])
 

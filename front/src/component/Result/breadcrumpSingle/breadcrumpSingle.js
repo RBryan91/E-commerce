@@ -14,19 +14,19 @@ function Bread() {
 
     useEffect( ()=> {   
         const article = test.id
-        axios("https://localhost:8000/api/articles/"+article)
+        axios("http://localhost:8000/api/articles/"+article)
         .then((res)=>{
                 setTitre(res.data["titre"])
                 if(res.data["souscategorie"])
                 {
-                    axios("https://localhost:8000"+res.data["souscategorie"]["@id"])
+                    axios("http://localhost:8000"+res.data["souscategorie"]["@id"])
                     .then((sous)=>{
                         setIdsous(sous.data.id)
                         setSouscategorie(sous.data.name)
                         
                     })
                 }
-            axios("https://localhost:8000"+res.data["categorie"]["@id"])
+            axios("http://localhost:8000"+res.data["categorie"]["@id"])
             .then((reponse)=>{
                 setIdcate(reponse.data.id)
                 setCategorie(reponse.data.name)

@@ -24,7 +24,7 @@ const Login = () => {
   useEffect(() => {
     if (From === "profil") {
       const ID = localStorage.getItem('id')
-      axios('https://localhost:8000/api/users/' + ID)
+      axios('http://localhost:8000/api/users/' + ID)
         .then((res) => {
           setEmail(res.data.email)
         })
@@ -38,7 +38,7 @@ const Login = () => {
     if (tableau === 1) {
 
 
-      axios.get('https://localhost:8000/api/paniers?user=' + id_user)
+      axios.get('http://localhost:8000/api/paniers?user=' + id_user)
         .then((rep) => {
           const path = rep.data["hydra:member"][0]["@id"]
           let array = path.split("/")
@@ -58,14 +58,14 @@ const Login = () => {
               if (cook[i].Size === true) {
                 id_size = "api/sizes/" + cook[i].size
               }
-              axios.post('https://localhost:8000/api/panier_articles', {
+              axios.post('http://localhost:8000/api/panier_articles', {
                 "panier": "api/paniers/" + id_panier,
                 "articles": cook[i]['@id'],
                 "quantity": cook[i].quantity,
                 "size": id_size
               })
             }
-            axios.get("https://localhost:8000/api/panier_articles?panier=" + id_panier)
+            axios.get("http://localhost:8000/api/panier_articles?panier=" + id_panier)
               .then((res) => {
                 article = res.data["hydra:member"];
                 cook.map((item) => {
@@ -84,20 +84,20 @@ const Login = () => {
                 if (weight > 6) {
                   weight = 6
                 }
-                axios('https://localhost:8000/api/poids?poid=' + weight)
+                axios('http://localhost:8000/api/poids?poid=' + weight)
                   .then((response) => {
                     PrixPoid = (response.data["hydra:member"][0].prix)
                   })
-                axios('https://localhost:8000/api/users/15')
+                axios('http://localhost:8000/api/users/15')
                   .then((res) => {
                     country = res.data.Pays
-                    axios("https://localhost:8000/api/pays?pays=" + country)
+                    axios("http://localhost:8000/api/pays?pays=" + country)
                       .then((res) => {
                         if (res.data["hydra:totalItems"] !== 0) {
                           PrixPays = (res.data["hydra:member"][0].prix)
                         }
                         else {
-                          axios("https://localhost:8000/api/pays?pays=autre")
+                          axios("http://localhost:8000/api/pays?pays=autre")
                             .then((resp) => {
                               PrixPays = (resp.data["hydra:member"][0].prix)
                             })
@@ -134,7 +134,7 @@ const Login = () => {
 
   async function connection(e) {
     e.preventDefault()
-    await axios('https://localhost:8000/api/users?email=' + email + '&password=' + password)
+    await axios('http://localhost:8000/api/users?email=' + email + '&password=' + password)
       .then((res) => {
         setTableau(res.data["hydra:member"].length)
         setRole(res.data["hydra:member"][0].role);

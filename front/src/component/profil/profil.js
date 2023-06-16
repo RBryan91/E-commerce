@@ -30,7 +30,7 @@ export default function Profil() {
             navigate("/login", { state: { data: "profil" } })
         }
         else {
-            axios("https://localhost:8000/api/users/" + id_user)
+            axios("http://localhost:8000/api/users/" + id_user)
                 .then((response) => {
                     setUsers(response.data)
                     setNom(response.data.Nom)
@@ -63,7 +63,7 @@ export default function Profil() {
             users.zipcode = zipcode
 
             const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/ld+json" } }
-            axios.patch('https://localhost:8000/api/users/' + id_user,
+            axios.patch('http://localhost:8000/api/users/' + id_user,
                 {
                     email: users.email,
                     password: users.password,

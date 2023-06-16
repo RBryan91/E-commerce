@@ -26,7 +26,7 @@ export default function ModifPaiement() {
             if (users.paiement !== undefined) {
                 const id_paiement = users.paiement["@id"].split("/").pop()
                 const configuration = { headers: { 'Content-Type': "application/merge-patch+json", Accept: "application/ld+json" } }
-                axios.patch('https://localhost:8000/api/paiements/' + id_paiement,
+                axios.patch('http://localhost:8000/api/paiements/' + id_paiement,
                     {
                         carte: numero,
                         CVC: CVC,
@@ -39,7 +39,7 @@ export default function ModifPaiement() {
             }
             else {
                 const configuration = { headers: { 'Content-Type': "application/json", Accept: "application/ld+json" } }
-                axios.post('https://localhost:8000/api/paiements', {
+                axios.post('http://localhost:8000/api/paiements', {
                     "user": users['@id'],
                     "carte": numero,
                     "CVC": CVC,

@@ -36,7 +36,7 @@ export default function Paiement() {
   const id_user = localStorage.getItem('id')
 
   useEffect(() => {
-    axios('https://localhost:8000/api/users/' + id_user)
+    axios('http://localhost:8000/api/users/' + id_user)
       .then((response) => {
         setUser_id(response.data['@id'])
         setUserAdresse(response.data.Adresse)
@@ -46,12 +46,12 @@ export default function Paiement() {
         }
       })
     if(from === "login"){
-      axios.get("https://localhost:8000/api/panier_articles?panier=" + id_panier)
+      axios.get("http://localhost:8000/api/panier_articles?panier=" + id_panier)
         .then((res)=>{
           setArticles(res.data["hydra:member"])
         })
     }
-    axios('https://localhost:8000/api/livraisons')
+    axios('http://localhost:8000/api/livraisons')
       .then((res) => {
         setTariflivraison(res.data['hydra:member'])
       })
@@ -60,7 +60,7 @@ export default function Paiement() {
 
   function radiochange(e) {
     setLivraison(e.target.value,);
-    axios.get('https://localhost:8000/api/livraisons?methode=' + e.target.value)
+    axios.get('http://localhost:8000/api/livraisons?methode=' + e.target.value)
       .then((res) => {
         setLivraisonSelect(parseFloat(res.data['hydra:member'][0].prix))
       })
@@ -73,7 +73,7 @@ export default function Paiement() {
         alert("Veuillez choisir un mode de livraison")
       }
       else {
-        axios.get('https://localhost:8000/api/livraisons?methode=' + livraison)
+        axios.get('http://localhost:8000/api/livraisons?methode=' + livraison)
           .then((res) => {
             setFraistotal(parseFloat(frais) + parseFloat(res.data['hydra:member'][0].prix))
           })
@@ -85,14 +85,14 @@ export default function Paiement() {
         alert("Veuillez renseigner tous les champs")
       }
       else {
-        axios.get('https://localhost:8000/api/livraisons?methode=' + livraison)
+        axios.get('http://localhost:8000/api/livraisons?methode=' + livraison)
           .then((res) => {
             setFraistotal(parseFloat(frais) + parseFloat(res.data['hydra:member'][0].prix))
           })
       }
       if (checked === true) {
         const configuration = { headers: { 'Content-Type': "application/json", Accept: "application/ld+json" } }
-        axios.post('https://localhost:8000/api/paiements', {
+        axios.post('http://localhost:8000/api/paiements', {
           "user": user_id,
           "carte": carte,
           "CVC": cvc,
@@ -106,21 +106,21 @@ export default function Paiement() {
         alert("Veuillez renseigner tous les champs")
       }
       else {
-        axios.get('https://localhost:8000/api/pays?pays=' + pays)
+        axios.get('http://localhost:8000/api/pays?pays=' + pays)
           .then((res) => {
             if (res.data["hydra:totalItems"] !== 0) {
               let fraisPays = (parseFloat(res.data['hydra:member'][0].prix))
-              axios.get('https://localhost:8000/api/livraisons?methode=' + livraison)
+              axios.get('http://localhost:8000/api/livraisons?methode=' + livraison)
                 .then((res) => {
                   setFraistotal(fraisPays + parseFloat(PrixPoid) + parseFloat(res.data['hydra:member'][0].prix))
                   setFrais(fraisPays + parseFloat(PrixPoid))
                 })
             }
             else {
-              axios.get('https://localhost:8000/api/pays?pays=autre')
+              axios.get('http://localhost:8000/api/pays?pays=autre')
                 .then((res) => {
                   let fraisPays = (parseFloat(res.data['hydra:member'][0].prix))
-                  axios.get('https://localhost:8000/api/livraisons?methode=' + livraison)
+                  axios.get('http://localhost:8000/api/livraisons?methode=' + livraison)
                     .then((res) => {
                       setFraistotal(fraisPays + parseFloat(PrixPoid) + parseFloat(res.data['hydra:member'][0].prix))
                       setFrais(fraisPays + parseFloat(PrixPoid))
@@ -136,21 +136,21 @@ export default function Paiement() {
         alert("Veuillez renseigner tous les champs")
       }
       else {
-        axios.get('https://localhost:8000/api/pays?pays=' + pays)
+        axios.get('http://localhost:8000/api/pays?pays=' + pays)
           .then((res) => {
             if (res.data["hydra:totalItems"] !== 0) {
               let fraisPays = (parseFloat(res.data['hydra:member'][0].prix))
-              axios.get('https://localhost:8000/api/livraisons?methode=' + livraison)
+              axios.get('http://localhost:8000/api/livraisons?methode=' + livraison)
                 .then((res) => {
                   setFraistotal(fraisPays + parseFloat(PrixPoid) + parseFloat(res.data['hydra:member'][0].prix))
                   setFrais(fraisPays + parseFloat(PrixPoid))
                 })
             }
             else {
-              axios.get('https://localhost:8000/api/pays?pays=autre')
+              axios.get('http://localhost:8000/api/pays?pays=autre')
                 .then((res) => {
                   let fraisPays = (parseFloat(res.data['hydra:member'][0].prix))
-                  axios.get('https://localhost:8000/api/livraisons?methode=' + livraison)
+                  axios.get('http://localhost:8000/api/livraisons?methode=' + livraison)
                     .then((res) => {
                       setFraistotal(fraisPays + parseFloat(PrixPoid) + parseFloat(res.data['hydra:member'][0].prix))
                       setFrais(fraisPays + parseFloat(PrixPoid))
@@ -160,7 +160,7 @@ export default function Paiement() {
           })
         if (checked === true) {
           const configuration = { headers: { 'Content-Type': "application/json", Accept: "application/ld+json" } }
-          axios.post('https://localhost:8000/api/paiements', {
+          axios.post('http://localhost:8000/api/paiements', {
             "user": user_id,
             "carte": carte,
             "CVC": cvc,

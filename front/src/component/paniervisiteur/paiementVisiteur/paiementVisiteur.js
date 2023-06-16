@@ -35,7 +35,7 @@ export default function PaiementVisiteur() {
   useEffect(() => {
     console.log(fraistotal)
     console.log(cookies.get('Frais'))
-    axios('https://localhost:8000/api/livraisons')
+    axios('http://localhost:8000/api/livraisons')
       .then((res) => {
         setTariflivraison(res.data['hydra:member'])
       })
@@ -51,19 +51,19 @@ export default function PaiementVisiteur() {
   function commande(e) {
     e.preventDefault()
     if (fullname !== "" && pays !== "" && tel !== "" && ville !== "" && email !== "" && zipcode !== "" && adresse !== "" && numerocb !== "" && cvc !== "" && livraison !== "" && date !== "") {
-      axios.get('https://localhost:8000/api/pays?pays=' + pays)
+      axios.get('http://localhost:8000/api/pays?pays=' + pays)
         .then((res) => {
           if (res.data["hydra:totalItems"] !== 0) {
             setFraispays(parseFloat(res.data['hydra:member'][0].prix))
           }
           else {
-            axios.get('https://localhost:8000/api/pays?pays=autre')
+            axios.get('http://localhost:8000/api/pays?pays=autre')
               .then((res) => {
                 setFraispays(parseFloat(res.data['hydra:member'][0].prix))
               })
           }
         })
-      axios.get('https://localhost:8000/api/livraisons?methode=' + livraison)
+      axios.get('http://localhost:8000/api/livraisons?methode=' + livraison)
         .then((res) => {
           setFraislivraison(res.data['hydra:member'][0].prix)
         })
